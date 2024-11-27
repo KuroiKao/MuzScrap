@@ -1,0 +1,69 @@
+﻿<Window x:Class="MuzScrap.WPF.Main.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MuzScrap.WPF.Main"
+        mc:Ignorable="d"
+        Title="MuzScrap" Height="700" Width="900" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
+        ResizeMode="NoResize" SizeToContent="Height" >
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="All"
+                Grid.Column="0" Margin="30"
+                Content="Все товары"
+                Click="All_Click"/>
+            <Button x:Name="Wishlist"
+                Grid.Column="1" Margin="30"
+                Content="Избранное"
+                Click="Wishlist_Click"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="/Img/acoustic_category_logo.png" 
+                       Margin="0 20 0 40" Height="270"/>
+                <Button x:Name="Guitar_Acoustic" 
+                        Content="Акустические гитары" 
+                        Click="Guitar_Acoustic_Click"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="/Img/electric_category_logo.png" 
+                       Margin="0 20 0 40" Height="270"/>
+                <Button x:Name="Guitar_Electro"              
+                        Content="Электрогитары"
+                        Click="Guitar_Electro_Click" />
+            </StackPanel>
+            <StackPanel Grid.Column="2" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="/Img/bass_category_logo.png" 
+                       Margin="0 20 0 40" Height="270"/>
+                <Button x:Name="Guitar_Bass"
+                        Content="Бас-гитары"
+                        Click="Guitar_Bass_Click" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

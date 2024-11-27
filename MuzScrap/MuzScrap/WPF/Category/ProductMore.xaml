@@ -1,0 +1,73 @@
+﻿<Window x:Class="MuzScrap.WPF.Category.ProductMore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MuzScrap.WPF.Category"
+        mc:Ignorable="d"
+        Title="{Binding Title}" 
+        Height="600" Width="800" ResizeMode="CanResize" 
+        WindowStartupLocation="CenterScreen" 
+        ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+        SizeToContent="Height">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding Title}" FontSize="20" x:Name="Title_Card" TextWrapping="Wrap"
+                       Grid.Row="0" Grid.Column="0" Margin="10 20 10 20"/>
+            <TextBlock Text="{Binding Brand}" FontSize="18" x:Name="Brand_Card"
+                       Grid.Row="1" Grid.Column="0" Margin="10 20 10 20"/>
+            <TextBlock Text="{Binding ProductType}" FontSize="16" x:Name="ProductType_Card"                       
+                       Grid.Row="2" Grid.Column="0" Margin="10 20 10 10"
+                       Foreground="Gray"/>
+            <Border BorderThickness="1" BorderBrush="Black" Background="Transparent" 
+                    Grid.Row="0" Grid.RowSpan="3" Grid.Column="1"
+                    Height="200" Width="200">
+                <StackPanel>
+                    <Image x:Name="Image_Card" Height="200"/>
+                </StackPanel>
+            </Border>
+            <Button x:Name="Left" Content="Л" Width="30" Height="30" FontSize="10"
+                    Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" Margin="0 0 90 0"
+                    VerticalAlignment="Bottom"
+                    Click="Left_Click"/>
+            <Button x:Name="Right" Content="П" Width="30" Height="30" FontSize="10"
+                    Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" Margin="90 0 0 0"
+                    VerticalAlignment="Bottom"
+                    Click="Right_Click"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0 20 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding Source}" FontSize="18" x:Name="Source1_Card" MaxWidth="550"
+                       Grid.Row="0" Grid.Column="0" Margin="10 10 10 40" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding Source2}" FontSize="18" x:Name="Source2_Card" MaxWidth="550"
+                       Grid.Row="0" Grid.Column="0" Margin="10 40 10 10" HorizontalAlignment="Left" VerticalAlignment="Bottom" TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding Price}" FontSize="18" x:Name="Price1_Card"
+                       Grid.Row="0" Grid.Column="1" Margin="10 10 10 40" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Price2}" FontSize="18" x:Name="Price2_Card"
+                       Grid.Row="0" Grid.Column="1" Margin="10 40 10 10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        </Grid>
+
+    </Grid>
+</Window>
